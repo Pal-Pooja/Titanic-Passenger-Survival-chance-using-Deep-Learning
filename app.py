@@ -27,7 +27,7 @@ with open("Scaller.pkl","rb") as file:
 data["Sex"]=label.transform(data["Sex"])
 print(data.columns)
 
-Embarked = onehot.transform(data[["Embarked"]])
+Embarked = Onehot.transform(data[["Embarked"]])
 
 embarked = pd.DataFrame(
     Embarked,
