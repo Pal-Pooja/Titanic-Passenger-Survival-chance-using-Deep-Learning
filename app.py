@@ -31,7 +31,7 @@ Embarked = Onehot.transform(data[["Embarked"]])
 
 embarked = pd.DataFrame(
     Embarked,
-    columns=onehot.get_feature_names_out(["Embarked"])
+    columns=Onehot.get_feature_names_out(["Embarked"])
 )
 
 data = pd.concat(
