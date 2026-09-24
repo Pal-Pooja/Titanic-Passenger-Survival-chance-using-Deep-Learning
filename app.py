@@ -17,7 +17,7 @@ with open("Label_encoder.pkl","rb") as file:
     label=pickle.load(file)
 
 
-with open("Onehot_encoder.pkl","rb") as file:
+with open("onehot_encoder.pkl","rb") as file:
     Onehot=pickle.load(file)
 
 
@@ -27,11 +27,11 @@ with open("Scaller.pkl","rb") as file:
 data["Sex"]=label.transform(data["Sex"])
 print(data.columns)
 
-Embarked = Onehot.transform(data[["Embarked"]])
+Embarked = onehot.transform(data[["Embarked"]])
 
 embarked = pd.DataFrame(
     Embarked,
-    columns=Onehot.get_feature_names_out(["Embarked"])
+    columns=onehot.get_feature_names_out(["Embarked"])
 )
 
 data = pd.concat(
